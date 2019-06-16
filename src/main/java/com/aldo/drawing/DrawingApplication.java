@@ -51,10 +51,10 @@ public class DrawingApplication implements CommandLineRunner {
 
                     if (element instanceof Canvas) {
                         canvas = (Canvas) element;
-                        canvas.draw(printer);
+                        canvas.render(printer);
                     } else if (canvas != null) {
-                        canvas.addElement(element);
-                        canvas.draw(printer);
+                        canvas.draw(element);
+                        canvas.render(printer);
                     } else {
                         printer.println("please create a canvas first");
                     }

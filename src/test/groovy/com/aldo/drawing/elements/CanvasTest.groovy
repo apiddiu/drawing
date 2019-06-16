@@ -11,7 +11,7 @@ class CanvasTest extends Specification {
         Canvas canvas = new Canvas(10, 5)
 
         when:
-        canvas.draw(printer)
+        canvas.render(printer)
 
         then:
         printer.println(_) >> { args ->
@@ -36,11 +36,11 @@ class CanvasTest extends Specification {
         Printer printer = Mock()
         StringBuilder sb = new StringBuilder()
         Canvas canvas = new Canvas(10, 5)
-        canvas.addElement(new Line(2, 1, 5, 1))
-        canvas.addElement(new Line(8, 2, 8, 5))
+        canvas.draw(new Line(2, 1, 5, 1))
+        canvas.draw(new Line(8, 2, 8, 5))
 
         when:
-        canvas.draw(printer)
+        canvas.render(printer)
 
         then:
         printer.println(_) >> { args ->
@@ -65,14 +65,14 @@ class CanvasTest extends Specification {
         Printer printer = Mock()
         StringBuilder sb = new StringBuilder()
         Canvas canvas = new Canvas(10, 5)
-        canvas.addElement(new Line(1, 1, 2, 1))
-        canvas.addElement(new Line(1, 5, 2, 5))
-        canvas.addElement(new Line(9, 1, 10, 1))
-        canvas.addElement(new Line(9, 5, 10, 5))
+        canvas.draw(new Line(1, 1, 2, 1))
+        canvas.draw(new Line(1, 5, 2, 5))
+        canvas.draw(new Line(9, 1, 10, 1))
+        canvas.draw(new Line(9, 5, 10, 5))
 
 
         when:
-        canvas.draw(printer)
+        canvas.render(printer)
 
         then:
         printer.println(_) >> { args ->
@@ -97,11 +97,11 @@ class CanvasTest extends Specification {
         Printer printer = Mock()
         StringBuilder sb = new StringBuilder()
         Canvas canvas = new Canvas(10, 5)
-        canvas.addElement(new Line(3, 1, 12, 1))
-        canvas.addElement(new Line(7, 3, 7, 8))
+        canvas.draw(new Line(3, 1, 12, 1))
+        canvas.draw(new Line(7, 3, 7, 8))
 
         when:
-        canvas.draw(printer)
+        canvas.render(printer)
 
         then:
         printer.println(_) >> { args ->
@@ -126,10 +126,10 @@ class CanvasTest extends Specification {
         Printer printer = Mock()
         StringBuilder sb = new StringBuilder()
         Canvas canvas = new Canvas(10, 5)
-        canvas.addElement(new Rectangle(2, 1, 8, 4))
+        canvas.draw(new Rectangle(2, 1, 8, 4))
 
         when:
-        canvas.draw(printer)
+        canvas.render(printer)
 
         then:
         printer.println(_) >> { args ->
@@ -154,10 +154,10 @@ class CanvasTest extends Specification {
         Printer printer = Mock()
         StringBuilder sb = new StringBuilder()
         Canvas canvas = new Canvas(10, 5)
-        canvas.addElement(new Rectangle(2, 1, 11, 4))
+        canvas.draw(new Rectangle(2, 1, 11, 4))
 
         when:
-        canvas.draw(printer)
+        canvas.render(printer)
 
         then:
         printer.println(_) >> { args ->
