@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 @EqualsAndHashCode
 @Getter
-public class Canvas implements Element {
+public class Canvas implements Element, Screen {
     private static final int border = 2;
     private final int width;
     private final int height;
@@ -44,7 +44,7 @@ public class Canvas implements Element {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void draw(Screen screen) {
     }
 
     private void drawHorizontal(int y) {
@@ -68,6 +68,7 @@ public class Canvas implements Element {
                 });
     }
 
+    @Override
     public void setPixel(int x, int y, char value) {
         if (inBound(x, y)) {
             screen[y][x] = value;

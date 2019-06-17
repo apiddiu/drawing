@@ -26,10 +26,10 @@ public class Rectangle implements Element {
     }
 
     @Override
-    public void draw(Canvas canvas) {
-        l1.draw(canvas);
-        l2.draw(canvas);
-        l3.draw(canvas);
-        l4.draw(canvas);
+    public void draw(Screen screen) {
+        l1.draw(screen);
+        l2.draw(screen);
+        l3.draw(screen);
+        l4.draw(screen);
     }
 }

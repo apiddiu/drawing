@@ -25,10 +25,10 @@ public class Line implements Element {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void draw(Screen screen) {
         for (int ix = x1; ix <= x2; ix++) {
             for (int iy = y1; iy <= y2; iy++) {
-                canvas.setPixel(ix, iy, 'X');
+                screen.setPixel(ix, iy, 'X');
             }
         }
     }
